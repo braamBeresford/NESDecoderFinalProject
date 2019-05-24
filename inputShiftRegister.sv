@@ -1,10 +1,9 @@
 module inputShiftRegister(input logic clk, 
 	input logic data,
 	input logic reset,
-	output logic [7:0] tmp, 
+	output logic [7:0] pressedButtons, 
 	output logic fullReg); 
 
-	//logic [7:0] tmp; 
 	logic [3:0] cycleState;
 	logic [3:0] nextState;
 
@@ -43,7 +42,7 @@ module inputShiftRegister(input logic clk,
 			if(cycleState == 9) fullReg = 1;
 				else fullReg = 0;
 				if(cycleState != 2 && cycleState !=9)
-					tmp = {tmp[6:0], data}; 
+					pressedButtons = {pressedButtons[6:0], data}; 
 		end  
 
 endmodule
