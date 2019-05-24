@@ -4,7 +4,7 @@ module inputShiftRegister(input logic clk,
 	output logic [7:0] tmp, 
 	output logic fullReg); 
 
-	// logic [7:0] tmp; 
+	//logic [7:0] tmp; 
 	logic [3:0] cycleState;
 	logic [3:0] nextState;
 
@@ -13,7 +13,7 @@ module inputShiftRegister(input logic clk,
 	always_ff@(posedge clk, posedge reset)
 	begin
 		if (reset) cycleState <= 0;
-		else		  cycleState <= nextState;
+		else cycleState <= nextState;
 	end
 
 	//next state logic
@@ -29,7 +29,7 @@ module inputShiftRegister(input logic clk,
 			6: nextState <= 7;
 			7: nextState <= 8;
 			8: nextState <= 9;
-			9: nextState <= 10;
+			9: nextState <= 0;
 			10: nextState <= 0;
 			default: nextState <= 0;
 				
@@ -39,8 +39,11 @@ module inputShiftRegister(input logic clk,
 	
 	always @(posedge clk) 
 		begin
-			tmp = {tmp[6:0], data}; 
-			if(cycleState == 10) fullReg = 1;
-			else fullReg = 0;
+			
+			if(cycleState == 9) fullReg = 1;
+				else fullReg = 0;
+				if(cycleState != 2 && cycleState !=9)
+					tmp = {tmp[6:0], data}; 
 		end  
+
 endmodule
