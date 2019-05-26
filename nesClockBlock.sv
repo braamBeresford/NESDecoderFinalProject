@@ -26,14 +26,15 @@ module nesClockBlock(input logic clk,
 			6: nextState <= 7;
 			7: nextState <= 8;
 			8: nextState <= 9;
-			9: nextState <= 0;
+			9: nextState <= 10;
+			10: nextState <= 0;
 			default: nextState <= 0;
 				
 		endcase
 	end
 	
 	//Output logic 
-	assign nesClk = (cycleState > 1)? clk: 0;
+	assign nesClk = (cycleState > 2)? clk: 0;
 
 
 

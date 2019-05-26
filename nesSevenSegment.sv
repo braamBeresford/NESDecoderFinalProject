@@ -5,7 +5,8 @@ module nesSevenSegment(
 
 	output logic nesLatchWire,
 	output logic nesClk,
-	output logic [7:0] sevenSeg
+	output logic [7:0] sevenSeg,
+	output logic [3:0] testingWire
 	);
 //logic clk;
 logic regFull;
@@ -26,7 +27,8 @@ inputShiftRegister inputRegister(
 	.data(nesData),
 	.reset(reset),
 	.pressedButtons(pressedButtons),
-	.fullReg(regFull));
+	.fullReg(regFull),
+	.cycleState(testingWire));
 
 currentInput storeButtons(
 	.clk(regFull),

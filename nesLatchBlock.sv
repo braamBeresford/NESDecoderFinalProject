@@ -26,13 +26,14 @@ module nesLatchBlock(input logic clk,
 			6: nextState <= 7;
 			7: nextState <= 8;
 			8: nextState <= 9;
-			9: nextState <= 0;
+			9: nextState <= 10;
+			10: nextState <= 0;
 			default: nextState <= 0;
 				
 		endcase
 	end
 	
 	//Output logic
-	assign nesLatch = (cycleState == 0);
+	assign nesLatch = (cycleState == 1);
 
 endmodule
