@@ -36,7 +36,7 @@ module inputShiftRegister(input logic clk,
 	end
 
 	
-	always @(posedge clk) 
+	always @(negedge clk) 
 		begin
 			
 			if(cycleState == 9) fullReg = 1;

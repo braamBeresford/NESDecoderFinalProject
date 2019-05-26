@@ -7,7 +7,7 @@ module nesSevenSegment(
 	output logic nesClk,
 	output logic [7:0] sevenSeg
 	);
-	
+//logic clk;
 logic regFull;
 logic [7:0] pressedButtons;
 
@@ -18,7 +18,7 @@ nesClockBlock nesClock(
 
 nesLatchBlock nesLatch(
 	.clk(clk),
-	.reset(rest),
+	.reset(reset),
 	.nesLatch(nesLatchWire));
 
 inputShiftRegister inputRegister(
@@ -33,5 +33,9 @@ currentInput storeButtons(
 	.reset(reset),
 	.newData(pressedButtons),
 	.currData(sevenSeg));
-
+//
+//counterclk clkDiv(
+//	.clk(masterClk),
+//	.reset(reset),
+//	.lastBit(clk));
 endmodule

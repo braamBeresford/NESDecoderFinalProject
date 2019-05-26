@@ -9,7 +9,7 @@ module nesLatchBlock(input logic clk,
 	
 	always_ff@(posedge clk, posedge reset)
 	begin
-		if (reset) cycleState <= 0;
+		if (reset) begin cycleState <= 0;end
 		else		  cycleState <= nextState;
 	end
 
@@ -26,8 +26,7 @@ module nesLatchBlock(input logic clk,
 			6: nextState <= 7;
 			7: nextState <= 8;
 			8: nextState <= 9;
-			9: nextState <= 10;
-			10: nextState <= 0;
+			9: nextState <= 0;
 			default: nextState <= 0;
 				
 		endcase
