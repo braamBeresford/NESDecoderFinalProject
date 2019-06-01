@@ -10,7 +10,7 @@ module nesClockBlock(input logic clk,
 	always_ff@(posedge clk, posedge reset)
 	begin
 		if (reset) cycleState <= 0;
-		else		  cycleState <= nextState;
+		else	   cycleState <= nextState;
 	end
 
 	//next state logic
@@ -34,7 +34,7 @@ module nesClockBlock(input logic clk,
 	end
 	
 	//Output logic 
-	assign nesClk = (cycleState > 2)? clk: 0;
+	assign nesClk = (cycleState > 2) ? clk: 0;
 
 
 
