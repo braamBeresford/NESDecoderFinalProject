@@ -8,6 +8,7 @@ module nesSevenSegment(
 	output logic [7:0] sevenSeg,
 	output logic [3:0] testingWire
 	);
+
 //logic clk;
 logic regFull;
 logic [7:0] pressedButtons;

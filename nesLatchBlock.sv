@@ -1,7 +1,7 @@
 module nesLatchBlock(input logic clk,
-							input logic reset,
-							output logic nesLatch
-							);
+		input logic reset,
+		output logic nesLatch
+		);
 
 	logic [3:0] cycleState;
 	logic [3:0] nextState;
