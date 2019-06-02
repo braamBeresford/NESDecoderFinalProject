@@ -1,7 +1,7 @@
 module nesClockBlock(input logic clk,
-							input logic reset,
-							output logic nesClk
-							);
+		input logic reset,
+		output logic nesClk
+		);
 
 	logic [3:0] cycleState;
 	logic [3:0] nextState;
