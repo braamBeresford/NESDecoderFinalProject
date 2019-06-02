@@ -4,7 +4,6 @@ module inputShiftRegister(input logic clk,
 	output logic [7:0] pressedButtons, 
 	output logic fullReg, output logic [3:0] cycleState); 
 
-//	logic [3:0] cycleState;
 	logic [3:0] nextState;
 
 	//State Register
