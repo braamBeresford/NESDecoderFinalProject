@@ -5,8 +5,8 @@ module nesClockBlock(input logic clk,
 
 	logic [3:0] cycleState;
 	logic [3:0] nextState;
-	//State Register
 	
+	//State Register
 	always_ff@(posedge clk, posedge reset)
 	begin
 		if (reset) cycleState <= 0;
