@@ -36,9 +36,9 @@ currentInput storeButtons(
 	.reset(reset),
 	.newData(pressedButtons),
 	.currData(sevenSeg));
-//
-//counterclk clkDiv(
-//	.clk(masterClk),
-//	.reset(reset),
-//	.lastBit(clk));
+
+counterclk clkDiv(
+	.clk(masterClk),
+	.reset(reset),
+	.lastBit(clk));
 endmodule
